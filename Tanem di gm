@@ -1,0 +1,8 @@
+DCMD:players(user, channel, params[])//cmd di discord nya
+{
+    new DCC_Embed:msgEmbed, msgField[256];
+    format(msgField, sizeof(msgField), ":bust_in_silhouette: Player Online Di Kota : %s", number_format(Iter_Count(Player)));
+    msgEmbed = DCC_CreateEmbed("", msgField, "", "", 0x00ff00, "Kota (isi nama kota lu yakan)  ", "", "", "");
+    DCC_SendChannelEmbedMessage(channel, msgEmbed);
+    return 1;
+}
